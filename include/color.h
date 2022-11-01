@@ -14,9 +14,9 @@ namespace GRIDDY
 
         Color()
         {
-            red   = 0x0;
-            green = 0x0;
-            blue  = 0x0;
+            red   = 0x00;
+            green = 0x00;
+            blue  = 0x00;
         }
 
         Color(

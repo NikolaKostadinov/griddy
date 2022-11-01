@@ -19,6 +19,16 @@ Vertex::Vertex(uint32_t _index_, uint32_t _jndex_)
     _yIndex = _jndex_;
 }
 
+void Vertex::setColor(color _color_)
+{
+    _color = _color_;
+}
+
+void Vertex::moveTo(uint32_t _index_, uint32_t _jndex_)
+{
+
+}
+
 void Vertex::render()
 {
     SDL_Rect* block = new SDL_Rect;
