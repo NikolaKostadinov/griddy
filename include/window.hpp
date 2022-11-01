@@ -1,6 +1,5 @@
 #pragma once
 
-#include "playgroundparams.h"
 #include "../include/SDL2/SDL.h"
 #include "../include/SDL2/SDL_image.h"
 #include <iostream>
@@ -11,17 +10,21 @@ class Window
 
         bool isRunning;
 
-        Window(const char* _toTitle_, int _width_, int _height_);
+        Window(
+            const char* _title_ ,
+            int         _width_ ,
+            int         _height_
+        );
 
-        void cleanUp();
-        void display();
-        void clear  ();
+        void          cleanUp ();
+        void          display ();
+        void          clear   ();
         
-        int           width()   ;
-        int           height()  ;
+        int           width   ();
+        int           height  ();
         SDL_Renderer* renderer();
 
-    private:
+    protected:
 
         int           _width   ;
         int           _height  ;

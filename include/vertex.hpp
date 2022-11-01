@@ -1,7 +1,6 @@
 #pragma once
 
-#include "playgroundparams.h"
-#include "window.hpp"
+#include "color.h"
 
 #include "../include/SDL2/SDL.h"
 
@@ -10,20 +9,25 @@ class Vertex
     public:
 
         Vertex();
-        ~Vertex();
+        virtual ~Vertex();
 
-        Vertex(uint32_t _index_, uint32_t _jndex_);
+        Vertex(
+            uint32_t _index_,
+            uint32_t _jndex_
+        );
         
-        void setColor();
+        void setColor(color  _color_);
+        void moveTo(uint32_t _index_, uint32_t _jndex_);
         void render();
 
-        uint32_t xIndex();
-        uint32_t yIndex();
+        uint32_t  index();
+        uint32_t  jndex();
         int      xCoord();
         int      yCoord();
 
-    private:
+    protected:
 
         uint32_t _xIndex;
         uint32_t _yIndex;
+        color    _color ;
 };
