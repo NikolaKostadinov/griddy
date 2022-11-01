@@ -4,14 +4,17 @@
 #include "../include/SDL2/SDL_image.h"
 #include <iostream>
 
-void testVideo()
+namespace griddy
 {
-    if (SDL_Init(SDL_INIT_VIDEO) > 0)
-        std::cout << "SDL_INIT_VIDEO ERROR: " << SDL_GetError() << std::endl;
-}
+    void testVideo()
+    {
+        if (SDL_Init(SDL_INIT_VIDEO) > 0)
+            std::cout << "SDL_INIT_VIDEO ERROR: " << SDL_GetError() << std::endl;
+    }
 
-void testImage()
-{
-    if (!IMG_Init(IMG_INIT_PNG))
-        std::cout << "IMG_INIT_PNG ERROR: "   << SDL_GetError() << std::endl;
+    void testImage()
+    {
+        if (!IMG_Init(IMG_INIT_PNG))
+            std::cout << "IMG_INIT_PNG ERROR: "   << SDL_GetError() << std::endl;
+    }
 }

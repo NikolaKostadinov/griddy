@@ -22,21 +22,31 @@ void Vertex::render()
     SDL_Rect* block = new SDL_Rect;
     block->x        = xCoord()    ;
     block->y        = yCoord()    ;
-    block->w        = dx()        ;
-    block->h        = dy()        ;
+    //block->w        = dx()        ;
+    //block->h        = dy()        ;
 
-    SDL_SetRenderDrawColor(_toRenderer_, 0, green, 0, 255);
-    SDL_RenderFillRect(_toRenderer_, block)               ;
+    //SDL_SetRenderDrawColor(_toRenderer_, color.red, color.green, color.blue, 255);
+    //SDL_RenderFillRect(_toRenderer_, block)               ;
 
     delete block;
 }
 
-uint32_t Vertex::xIndex()
+uint32_t Vertex::index()
 {
     return _xIndex;
 }
 
-uint32_t Vertex::yIndex()
+uint32_t Vertex::jndex()
+{
+    return _yIndex;
+}
+
+uint32_t Vertex::xCoord()
+{
+    return _xIndex;
+}
+
+uint32_t Vertex::yCoord()
 {
     return _yIndex;
 }

@@ -9,21 +9,22 @@
 
 int main(int argc, char* args[])
 {
-    testVideo();
-    testImage();
+    griddy::testVideo();
+    griddy::testImage();
 
-    const char* title = "";
-    Window window = Window(title, 100, 100);
+    Window window = Window();
 
     SDL_Event event;
     while (window.isRunning)
     {
         while ( SDL_PollEvent(&event) )
             if (event.type == SDL_QUIT)
-                window.cleanUp();
+                window.destroy();
 
         window.clear();
-        // CODE HERE
+
+        // CODE HERE //
+
         window.display();
     }
 

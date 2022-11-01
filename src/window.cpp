@@ -1,6 +1,6 @@
 #include "../include/window.hpp"
 
-Window::Window(const char* _toTitle_, int _width_, int _height_) : _window(NULL), _renderer(NULL)
+Window::Window(const char* _toTitle_, uint32_t _width_, uint32_t _height_) : _window(NULL), _renderer(NULL)
 {
     isRunning = true;
 
@@ -8,11 +8,11 @@ Window::Window(const char* _toTitle_, int _width_, int _height_) : _window(NULL)
     _height = _height_;
 
     _window = SDL_CreateWindow(
-        _toTitle_,
+        _toTitle_              ,
         SDL_WINDOWPOS_UNDEFINED,
         SDL_WINDOWPOS_UNDEFINED,
-        _width,
-        _height,
+        (int) _width           ,
+        (int) _height          ,
         SDL_WINDOW_SHOWN
     );
 
@@ -23,13 +23,18 @@ Window::Window(const char* _toTitle_, int _width_, int _height_) : _window(NULL)
     }
 
     _renderer = SDL_CreateRenderer(
-        _window,
-        -1,
+        _window                 ,
+        -1                      ,
         SDL_RENDERER_ACCELERATED
     );
 }
 
-void Window::cleanUp()
+Window::~Window()
+{
+    destroy();
+}
+
+void Window::destroy()
 {
     SDL_DestroyWindow  (_window  );
     SDL_DestroyRenderer(_renderer);
@@ -46,12 +51,12 @@ void Window::clear()
     SDL_RenderClear(_renderer);
 }
 
-int Window::width()
+uint32_t Window::width()
 {
     return _width;
 }
 
-int Window::height()
+uint32_t Window::height()
 {
     return _height;
 }

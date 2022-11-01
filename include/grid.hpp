@@ -12,13 +12,13 @@ class Grid
         Grid();
         virtual ~Grid();
 
-        void setPosition(SDL_Rect _rect_    );
+        void setPosition(SDL_Rect _rect_     = SDL_Rect());
         void setSize    (
             uint32_t _xSize_,
             uint32_t _ySize_
         );
-        void setVertices(Vertex*  _toOrigin_);
-        void setWindow  (Window*  _toWindow_);
+        void setVertices(Vertex*  _toOrigin_ = new Vertex());
+        void setWindow  (Window*  _toWindow_ = new Window());
         
         void render     (                   );
 

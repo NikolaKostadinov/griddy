@@ -1,5 +1,7 @@
 #pragma once
 
+#include "griddy_params.h"
+
 #include "../include/SDL2/SDL.h"
 #include "../include/SDL2/SDL_image.h"
 #include <iostream>
@@ -11,23 +13,24 @@ class Window
         bool isRunning;
 
         Window(
-            const char* _title_ ,
-            int         _width_ ,
-            int         _height_
+            const char* _title_  = DEFAULT_TITLE ,
+            uint32_t    _width_  = DEFAULT_WIDTH ,
+            uint32_t    _height_ = DEFAULT_HEIGHT
         );
+        virtual ~Window();
 
-        void          cleanUp ();
+        void          destroy ();
         void          display ();
         void          clear   ();
         
-        int           width   ();
-        int           height  ();
+        uint32_t      width   ();
+        uint32_t      height  ();
         SDL_Renderer* renderer();
 
     protected:
 
-        int           _width   ;
-        int           _height  ;
+        uint32_t      _width   ;
+        uint32_t      _height  ;
         SDL_Window*   _window  ;
         SDL_Renderer* _renderer;
 };

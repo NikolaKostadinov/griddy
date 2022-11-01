@@ -2,12 +2,18 @@
 
 #include <stdint.h>
 
-typedef Color color;
-struct  Color
+struct Color
 {
     uint8_t red  ;
     uint8_t green;
     uint8_t blue ;
+
+    Color()
+    {
+        red   = 0x0;
+        green = 0x0;
+        blue  = 0x0;
+    }
 
     Color(
         uint8_t _red_  ,
@@ -20,3 +26,5 @@ struct  Color
         blue  = _blue_ ;
     }
 };
+
+typedef Color color;

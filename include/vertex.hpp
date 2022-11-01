@@ -22,8 +22,8 @@ class Vertex
 
         uint32_t  index();
         uint32_t  jndex();
-        int      xCoord();
-        int      yCoord();
+        uint32_t xCoord();
+        uint32_t yCoord();
 
     protected:
 
