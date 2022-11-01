@@ -2,21 +2,14 @@
 
 using namespace GRIDDY;
 
-Vertex::Vertex()
+Vertex::Vertex(uint32_t _index_, uint32_t _jndex_)
 {
-    _xIndex = 0u;
-    _yIndex = 0u;
+    moveTo(_index_,_jndex_);
 }
 
 Vertex::~Vertex()
 {
 
-}
-
-Vertex::Vertex(uint32_t _index_, uint32_t _jndex_)
-{
-    _xIndex = _index_;
-    _yIndex = _jndex_;
 }
 
 void Vertex::setColor(color _color_)
@@ -26,21 +19,23 @@ void Vertex::setColor(color _color_)
 
 void Vertex::moveTo(uint32_t _index_, uint32_t _jndex_)
 {
-
+    _xIndex = _index_;
+    _yIndex = _jndex_;
 }
 
-void Vertex::render()
+void Vertex::render(SDL_Rect* _rect_, SDL_Renderer* _renderer_)
 {
-    SDL_Rect* block = new SDL_Rect;
-    block->x        = xCoord()    ;
-    block->y        = yCoord()    ;
-    //block->w        = dx()        ;
-    //block->h        = dy()        ;
-
-    //SDL_SetRenderDrawColor(_toRenderer_, color.red, color.green, color.blue, 255);
-    //SDL_RenderFillRect(_toRenderer_, block)               ;
-
-    delete block;
+    SDL_SetRenderDrawColor(
+        _renderer_  ,
+        _color.red  ,
+        _color.green,
+        _color.blue ,
+        255
+    );
+    SDL_RenderFillRect(
+        _renderer_,
+        _rect_
+    );
 }
 
 uint32_t Vertex::index()

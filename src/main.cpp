@@ -12,7 +12,7 @@ int main(int argc, char* args[])
     griddy::testVideo();
     griddy::testImage();
 
-    const uint32_t      N = 2u;
+    const uint32_t      N = 200u;
     const griddy::color C = griddy::Color(0x00, 0xff, 0x00);
 
     griddy::Window window = griddy::Window(     );
@@ -37,9 +37,7 @@ int main(int argc, char* args[])
                 window.destroy();
 
         window.clear();
-
-        // CODE HERE //
-
+        grid.render();
         window.display();
     }
 

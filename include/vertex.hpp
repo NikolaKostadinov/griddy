@@ -11,17 +11,15 @@ namespace GRIDDY
     {
         public:
 
-            Vertex();
-            virtual ~Vertex();
-
             Vertex(
-                uint32_t _index_,
-                uint32_t _jndex_
+                uint32_t _index_ = 0u,
+                uint32_t _jndex_ = 0u
             );
+            virtual ~Vertex();
             
             void setColor(color  _color_);
             void moveTo(uint32_t _index_, uint32_t _jndex_);
-            void render();
+            void render(SDL_Rect* _rect_, SDL_Renderer* _renderer_);
 
             uint32_t  index();
             uint32_t  jndex();
