@@ -12,7 +12,8 @@ int main(int argc, char* args[])
     griddy::testVideo();
     griddy::testImage();
 
-    Window window = Window();
+    griddy::Window window = griddy::Window();
+    griddy::Grid   grid   = griddy::Grid(&window);
 
     SDL_Event event;
     while (window.isRunning)

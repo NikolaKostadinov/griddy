@@ -6,31 +6,34 @@
 #include "../include/SDL2/SDL_image.h"
 #include <iostream>
 
-class Window
+namespace GRIDDY
 {
-    public:
+    class Window
+    {
+        public:
 
-        bool isRunning;
+            bool isRunning;
 
-        Window(
-            const char* _title_  = DEFAULT_TITLE ,
-            uint32_t    _width_  = DEFAULT_WIDTH ,
-            uint32_t    _height_ = DEFAULT_HEIGHT
-        );
-        virtual ~Window();
+            Window(
+                const char* _title_  = DEFAULT_TITLE ,
+                uint32_t    _width_  = DEFAULT_WIDTH ,
+                uint32_t    _height_ = DEFAULT_HEIGHT
+            );
+            virtual ~Window();
 
-        void          destroy ();
-        void          display ();
-        void          clear   ();
-        
-        uint32_t      width   ();
-        uint32_t      height  ();
-        SDL_Renderer* renderer();
+            void          destroy ();
+            void          display ();
+            void          clear   ();
+            
+            uint32_t      width   ();
+            uint32_t      height  ();
+            SDL_Renderer* renderer();
 
-    protected:
+        protected:
 
-        uint32_t      _width   ;
-        uint32_t      _height  ;
-        SDL_Window*   _window  ;
-        SDL_Renderer* _renderer;
-};
+            uint32_t      _width   ;
+            uint32_t      _height  ;
+            SDL_Window*   _window  ;
+            SDL_Renderer* _renderer;
+    };
+}

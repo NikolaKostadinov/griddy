@@ -1,5 +1,7 @@
 #include "../include/vertex.hpp"
 
+using namespace GRIDDY;
+
 Vertex::Vertex()
 {
     _xIndex = 0u;

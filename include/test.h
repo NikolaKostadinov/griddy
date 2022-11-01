@@ -1,10 +1,12 @@
 #pragma once
 
+#include "griddy_params.h"
+
 #include "../include/SDL2/SDL.h"
 #include "../include/SDL2/SDL_image.h"
 #include <iostream>
 
-namespace griddy
+namespace GRIDDY
 {
     void testVideo()
     {

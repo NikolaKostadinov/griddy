@@ -1,5 +1,7 @@
 #include "../include/window.hpp"
 
+using namespace GRIDDY;
+
 Window::Window(const char* _toTitle_, uint32_t _width_, uint32_t _height_) : _window(NULL), _renderer(NULL)
 {
     isRunning = true;

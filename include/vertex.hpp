@@ -1,33 +1,37 @@
 #pragma once
 
+#include "griddy_params.h"
 #include "color.h"
 
 #include "../include/SDL2/SDL.h"
 
-class Vertex
+namespace GRIDDY
 {
-    public:
+    class Vertex
+    {
+        public:
 
-        Vertex();
-        virtual ~Vertex();
+            Vertex();
+            virtual ~Vertex();
 
-        Vertex(
-            uint32_t _index_,
-            uint32_t _jndex_
-        );
-        
-        void setColor(color  _color_);
-        void moveTo(uint32_t _index_, uint32_t _jndex_);
-        void render();
+            Vertex(
+                uint32_t _index_,
+                uint32_t _jndex_
+            );
+            
+            void setColor(color  _color_);
+            void moveTo(uint32_t _index_, uint32_t _jndex_);
+            void render();
 
-        uint32_t  index();
-        uint32_t  jndex();
-        uint32_t xCoord();
-        uint32_t yCoord();
+            uint32_t  index();
+            uint32_t  jndex();
+            uint32_t xCoord();
+            uint32_t yCoord();
 
-    protected:
+        protected:
 
-        uint32_t _xIndex;
-        uint32_t _yIndex;
-        color    _color ;
-};
+            uint32_t _xIndex;
+            uint32_t _yIndex;
+            color    _color ;
+    };
+}
